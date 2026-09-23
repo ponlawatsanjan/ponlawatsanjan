@@ -3,133 +3,296 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>Ponlawat Sanjan | Portfolio</title>
-  <meta name="description" content="Ponlawat Sanjan — engineering, quantitative research, AI and automation.">
-  <meta property="og:title" content="Ponlawat Sanjan | Portfolio">
-  <meta property="og:description" content="Engineering · Research · AI · Automation">
-  <link rel="stylesheet" href="css/style.css">
+  <meta name="theme-color" content="#0b0d12">
+  <title>Ponlawat Sanjan — Portfolio</title>
+  <meta name="description" content="Ponlawat Sanjan — engineering, quantitative research, financial markets, AI and automation.">
+  <meta property="og:title" content="Ponlawat Sanjan — Portfolio">
+  <meta property="og:description" content="Engineering · Research · Markets · AI · Automation">
+  <style>
+    :root{
+      --bg:#0b0d12;--bg2:#10131a;--panel:#12161f;--panel2:#171c27;
+      --text:#f6f7fb;--muted:#9aa3b4;--line:rgba(255,255,255,.10);
+      --accent:#7c8cff;--accent2:#50d5c8;--warm:#ffb86b;--max:1180px
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;background:
+      radial-gradient(900px 600px at 78% -10%,rgba(124,140,255,.18),transparent 60%),
+      radial-gradient(700px 520px at -5% 35%,rgba(80,213,200,.10),transparent 62%),
+      var(--bg);
+      color:var(--text);font:16px/1.65 Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif
+    }
+    a{color:inherit;text-decoration:none}
+    .shell{max-width:var(--max);margin:auto;padding:0 28px}
+    .nav-wrap{position:sticky;top:0;z-index:20;padding:16px 0;background:linear-gradient(to bottom,rgba(11,13,18,.94),rgba(11,13,18,.72),transparent);backdrop-filter:blur(12px)}
+    .nav{
+      max-width:var(--max);margin:auto;padding:12px 16px 12px 18px;border:1px solid var(--line);
+      border-radius:18px;background:rgba(18,22,31,.78);display:flex;align-items:center;justify-content:space-between;gap:20px
+    }
+    .brand{display:flex;align-items:center;gap:11px;font-weight:750;letter-spacing:-.02em}
+    .brand-mark{
+      width:34px;height:34px;border-radius:10px;display:grid;place-items:center;
+      background:linear-gradient(135deg,var(--accent),#a56dff);box-shadow:0 8px 30px rgba(124,140,255,.25);
+      font:800 12px/1 ui-monospace,SFMono-Regular,Menlo,monospace
+    }
+    nav{display:flex;gap:8px}
+    nav a{padding:8px 11px;border-radius:10px;color:var(--muted);font-size:13px}
+    nav a:hover{background:rgba(255,255,255,.06);color:var(--text)}
+    .hero{
+      min-height:780px;padding:82px 0 96px;display:grid;grid-template-columns:minmax(0,1.05fr) minmax(360px,.95fr);
+      gap:72px;align-items:center
+    }
+    .eyebrow{display:flex;align-items:center;gap:10px;color:#b9c2ff;font:700 11px/1 ui-monospace,SFMono-Regular,Menlo,monospace;letter-spacing:.14em}
+    .eyebrow:before{content:"";width:28px;height:1px;background:var(--accent)}
+    h1{font-size:clamp(64px,8vw,108px);line-height:.92;letter-spacing:-.07em;margin:26px 0 30px;font-weight:680}
+    .gradient-text{background:linear-gradient(90deg,#fff 0%,#aebaff 48%,#66e6d7 100%);-webkit-background-clip:text;background-clip:text;color:transparent}
+    .hero-copy>p{max-width:680px;color:#b6becd;font-size:20px;margin:0}
+    .actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:32px}
+    .btn{
+      min-height:46px;display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:0 17px;border-radius:12px;
+      border:1px solid var(--line);font-size:14px;font-weight:700;transition:.2s ease
+    }
+    .btn.primary{background:var(--text);color:#0d1016;border-color:var(--text)}
+    .btn.secondary{background:rgba(255,255,255,.035)}
+    .btn:hover{transform:translateY(-2px)}
+    .btn.primary:hover{box-shadow:0 12px 30px rgba(255,255,255,.10)}
+    .hero-tags{display:flex;flex-wrap:wrap;gap:9px;margin-top:38px}
+    .hero-tags span{padding:7px 10px;border-radius:999px;border:1px solid var(--line);color:var(--muted);font-size:12px;background:rgba(255,255,255,.025)}
+    .system-art{
+      position:relative;aspect-ratio:1/1;border-radius:30px;border:1px solid var(--line);overflow:hidden;
+      background:
+        radial-gradient(circle at 65% 38%,rgba(124,140,255,.20),transparent 25%),
+        radial-gradient(circle at 30% 72%,rgba(80,213,200,.12),transparent 28%),
+        linear-gradient(145deg,#121620,#0d1017 70%);
+      box-shadow:0 40px 100px rgba(0,0,0,.34)
+    }
+    .system-art:before{
+      content:"";position:absolute;inset:0;background-image:
+      linear-gradient(rgba(255,255,255,.035) 1px,transparent 1px),
+      linear-gradient(90deg,rgba(255,255,255,.035) 1px,transparent 1px);
+      background-size:36px 36px;mask-image:linear-gradient(to bottom,black,transparent 92%)
+    }
+    .art-label{position:absolute;left:24px;top:22px;font:700 10px ui-monospace,monospace;letter-spacing:.14em;color:#98a3b7}
+    .system-art svg{position:absolute;inset:8%;width:84%;height:84%}
+    .node{fill:#161c27;stroke:rgba(255,255,255,.18);stroke-width:1.2}
+    .node-accent{fill:#171d35;stroke:#7c8cff;stroke-width:1.4}
+    .flow{fill:none;stroke:url(#flowGradient);stroke-width:2;stroke-linecap:round;opacity:.9;stroke-dasharray:8 10;animation:dash 13s linear infinite}
+    .flow-soft{fill:none;stroke:rgba(255,255,255,.10);stroke-width:1}
+    .node-label{fill:#e8ebf4;font:700 11px ui-monospace,monospace;letter-spacing:.08em;text-anchor:middle}
+    .node-sub{fill:#7f899b;font:500 8px ui-monospace,monospace;letter-spacing:.07em;text-anchor:middle}
+    .pulse{transform-origin:center;animation:pulse 3.2s ease-in-out infinite}
+    @keyframes dash{to{stroke-dashoffset:-180}}
+    @keyframes pulse{50%{opacity:.55;transform:scale(.96)}}
+    .section{padding:112px 0;border-top:1px solid var(--line)}
+    .section-head{display:flex;align-items:center;gap:14px;margin-bottom:46px;color:#8f98aa;font:700 11px ui-monospace,monospace;letter-spacing:.13em}
+    .section-head span{color:#8fa0ff}
+    .section-head:after{content:"";height:1px;flex:1;background:var(--line)}
+    h2{font-size:clamp(42px,5vw,66px);line-height:1;letter-spacing:-.055em;margin:0;font-weight:650}
+    .split{display:grid;grid-template-columns:.9fr 1.1fr;gap:78px}
+    .lead{color:#b4bccb;font-size:20px;margin:0;max-width:720px}
+    .cap-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+    .cap{
+      min-height:180px;padding:24px;border:1px solid var(--line);border-radius:18px;background:linear-gradient(145deg,rgba(255,255,255,.045),rgba(255,255,255,.02));
+      transition:.2s ease
+    }
+    .cap:hover{transform:translateY(-3px);border-color:rgba(124,140,255,.35)}
+    .cap-num{color:#7c8cff;font:700 10px ui-monospace,monospace;letter-spacing:.12em}
+    .cap h3{font-size:22px;letter-spacing:-.03em;margin:34px 0 8px}
+    .cap p{margin:0;color:var(--muted);font-size:14px}
+    .timeline{border-top:1px solid var(--line)}
+    .role{display:grid;grid-template-columns:220px 1fr;gap:42px;padding:30px 0;border-bottom:1px solid var(--line)}
+    .role small{display:block;color:#8f98aa;margin-top:4px}
+    .role strong{font-size:18px}
+    .role p{margin:0;color:#aeb6c5}
+    .projects-intro{display:grid;grid-template-columns:1fr .7fr;gap:60px;align-items:end;margin-bottom:42px}
+    .projects-intro p{margin:0;color:var(--muted)}
+    .project{
+      display:grid;grid-template-columns:minmax(320px,.85fr) minmax(0,1.15fr);border:1px solid var(--line);border-radius:24px;
+      overflow:hidden;background:rgba(17,21,29,.82)
+    }
+    .project-visual{position:relative;min-height:480px;background:linear-gradient(145deg,#121722,#0a0d13);overflow:hidden}
+    .project-visual:before{
+      content:"";position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.035) 1px,transparent 1px);
+      background-size:28px 28px
+    }
+    .pv-title{position:absolute;left:26px;top:23px;color:#8fa0ff;font:700 10px ui-monospace,monospace;letter-spacing:.14em}
+    .spread-art{position:absolute;inset:68px 28px 32px}
+    .spread-art svg{width:100%;height:100%}
+    .spread-line-a{fill:none;stroke:#7c8cff;stroke-width:2.4}
+    .spread-line-b{fill:none;stroke:#50d5c8;stroke-width:2.1;opacity:.88}
+    .spread-area{fill:url(#areaGrad);opacity:.16}
+    .axis{stroke:rgba(255,255,255,.08);stroke-width:1}
+    .point-a{fill:#7c8cff}.point-b{fill:#50d5c8}
+    .project-body{padding:42px}
+    .project-meta{color:#91a0ff;font:700 10px ui-monospace,monospace;letter-spacing:.12em;margin-bottom:18px}
+    .project h3{font-size:clamp(32px,4vw,48px);line-height:1.04;letter-spacing:-.045em;margin:0}
+    .project-body>p{color:#adb5c4;font-size:17px;margin:20px 0 0;max-width:650px}
+    .tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:24px}
+    .tags span{padding:6px 10px;border:1px solid var(--line);border-radius:999px;color:#9da6b5;font-size:12px}
+    details{margin-top:30px;border-top:1px solid var(--line);padding-top:18px}
+    summary{list-style:none;cursor:pointer;display:flex;align-items:center;justify-content:space-between;padding:11px 0;font-weight:700}
+    summary::-webkit-details-marker{display:none}
+    summary .chev{transition:.2s ease}
+    details[open] summary .chev{transform:rotate(180deg)}
+    .project-links{display:grid;grid-template-columns:1fr 1fr;gap:10px;padding:10px 0 2px}
+    .project-links a{display:flex;justify-content:space-between;align-items:center;gap:14px;padding:16px;border:1px solid var(--line);border-radius:12px;background:#0f131b;transition:.2s ease}
+    .project-links a:hover{transform:translateY(-2px);border-color:rgba(124,140,255,.45);background:#141a27}
+    .project-links strong,.project-links small{display:block}
+    .project-links small{color:var(--muted);font-size:12px;margin-top:2px}
+    .contact{
+      display:grid;grid-template-columns:1fr .8fr;gap:60px;padding:54px;border:1px solid var(--line);border-radius:26px;
+      background:
+      radial-gradient(500px 260px at 90% 20%,rgba(124,140,255,.16),transparent 65%),
+      linear-gradient(145deg,#141924,#0d1017)
+    }
+    .contact p{color:#aeb6c5;margin-top:18px}
+    footer{display:flex;justify-content:space-between;padding:30px 0 46px;color:#777f90;font-size:12px}
+    @media(max-width:900px){
+      .hero,.split,.projects-intro,.project,.contact{grid-template-columns:1fr}
+      .hero{min-height:auto;padding-top:56px}.system-art{max-width:620px}.project-visual{min-height:360px}.split{gap:42px}
+    }
+    @media(max-width:700px){
+      .shell{padding:0 20px}.nav-wrap{padding:10px 12px}.nav{padding:10px 12px}.brand span:last-child{display:none}
+      nav{display:none}.hero{padding-bottom:72px}.section{padding:82px 0}.cap-grid{grid-template-columns:1fr}.role{grid-template-columns:1fr;gap:10px}
+      .project-body{padding:26px}.project-links{grid-template-columns:1fr}.contact{padding:32px}.system-art{border-radius:22px}
+    }
+    @media(max-width:480px){h1{font-size:52px}.hero-copy>p,.lead{font-size:18px}.project-visual{min-height:300px}}
+    @media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important}.flow,.pulse{animation:none!important}.btn,.cap,.project-links a{transition:none!important}}
+  </style>
 </head>
 <body>
-<header class="nav">
-  <a class="brand" href="#home"><span class="brand-mark">P</span>Ponlawat Sanjan</a>
-  <nav aria-label="Primary navigation">
-    <a href="#about">About</a><a href="#experience">Experience</a><a href="#skills">Skills</a><a href="#projects">Projects</a><a href="#contact">Contact</a>
-  </nav>
-</header>
+<div class="nav-wrap">
+  <header class="nav">
+    <a class="brand" href="#home"><span class="brand-mark">PS</span><span>Ponlawat Sanjan</span></a>
+    <nav aria-label="Primary navigation">
+      <a href="#about">About</a><a href="#experience">Experience</a><a href="#skills">Skills</a><a href="#projects">Projects</a><a href="#contact">Contact</a>
+    </nav>
+  </header>
+</div>
 
-<main>
-<section id="home" class="hero">
-  <div class="hero-copy">
-    <div class="kicker">ENGINEERING · RESEARCH · AUTOMATION</div>
-    <h1>Building useful<br>systems from ideas.</h1>
-    <p>I work across software, quantitative research, financial markets and AI automation — turning complex problems into practical tools and structured workflows.</p>
-    <div class="actions"><a class="primary" href="#projects">Explore my work</a><a class="secondary" href="https://github.com/ponlawatsanjan">GitHub ↗</a></div>
-  </div>
-
-  <div class="hero-visual" aria-hidden="true">
-    <div class="visual-grid"></div>
-    <div class="orbit orbit-a"></div>
-    <div class="orbit orbit-b"></div>
-    <div class="visual-core">
-      <span>IDEA</span>
-      <strong>→</strong>
-      <span>SYSTEM</span>
+<main class="shell">
+  <section id="home" class="hero">
+    <div class="hero-copy">
+      <div class="eyebrow">ENGINEERING · RESEARCH · AUTOMATION</div>
+      <h1>I turn complex ideas into <span class="gradient-text">working systems.</span></h1>
+      <p>I work across software, quantitative research, financial markets and AI automation — building practical tools, research workflows and data-driven systems.</p>
+      <div class="actions">
+        <a class="btn primary" href="#projects">Explore projects <span>↓</span></a>
+        <a class="btn secondary" href="https://github.com/ponlawatsanjan">GitHub ↗</a>
+      </div>
+      <div class="hero-tags"><span>Python</span><span>Quant Research</span><span>Data</span><span>AI Automation</span><span>APIs</span></div>
     </div>
-    <div class="visual-chip chip-a">DATA</div>
-    <div class="visual-chip chip-b">CODE</div>
-    <div class="visual-chip chip-c">AI</div>
-    <div class="visual-chip chip-d">RESEARCH</div>
-    <div class="visual-dot dot-a"></div>
-    <div class="visual-dot dot-b"></div>
-  </div>
-</section>
 
-<section id="about">
-  <div class="section-head"><span>01</span><p>About</p></div>
-  <div class="split"><h2>Curious by nature.<br>Practical by design.</h2><p class="lead">I enjoy understanding how systems behave, finding where processes can be improved, and building tools that make the result clearer, faster or more reliable. My work currently spans markets, data, Python development and AI-assisted automation.</p></div>
-</section>
+    <div class="system-art" aria-hidden="true">
+      <div class="art-label">SYSTEM MAP / 01</div>
+      <svg viewBox="0 0 500 500" role="img">
+        <defs>
+          <linearGradient id="flowGradient" x1="0" x2="1"><stop stop-color="#7c8cff"/><stop offset="1" stop-color="#50d5c8"/></linearGradient>
+        </defs>
+        <path class="flow-soft" d="M120 140 C210 70 285 82 372 142 S430 300 338 357 S168 390 104 292 S68 195 120 140"/>
+        <path class="flow" d="M120 140 C200 105 238 208 288 245 S365 278 385 190"/>
+        <path class="flow" d="M104 292 C166 245 207 270 288 245 S333 161 372 142"/>
+        <circle class="node pulse" cx="120" cy="140" r="48"/>
+        <circle class="node" cx="104" cy="292" r="43"/>
+        <circle class="node-accent pulse" cx="288" cy="245" r="58"/>
+        <circle class="node" cx="372" cy="142" r="45"/>
+        <circle class="node" cx="385" cy="340" r="47"/>
+        <text class="node-label" x="120" y="137">RESEARCH</text><text class="node-sub" x="120" y="153">QUESTION</text>
+        <text class="node-label" x="104" y="289">DATA</text><text class="node-sub" x="104" y="305">INPUT</text>
+        <text class="node-label" x="288" y="242">BUILD</text><text class="node-sub" x="288" y="258">SYSTEM</text>
+        <text class="node-label" x="372" y="139">CODE</text><text class="node-sub" x="372" y="155">ENGINEER</text>
+        <text class="node-label" x="385" y="337">AUTOMATE</text><text class="node-sub" x="385" y="353">IMPROVE</text>
+      </svg>
+    </div>
+  </section>
 
-<section id="experience">
-  <div class="section-head"><span>02</span><p>Experience</p></div>
-  <div class="split"><h2>Work</h2><div class="timeline">
-    <article><div><strong>Equity Derivatives Trading</strong><small>Sell-side · Current</small></div><p>Trading operations across equity derivatives, with a focus on execution workflows, system reliability and process automation.</p></article>
-    <article class="muted"><div><strong>More experience</strong><small>Details coming soon</small></div><p>Additional verified experience will be added here.</p></article>
-  </div></div>
-</section>
+  <section id="about" class="section">
+    <div class="section-head"><span>01</span>ABOUT</div>
+    <div class="split">
+      <h2>Curious by nature.<br>Practical by design.</h2>
+      <p class="lead">I enjoy understanding how systems behave, finding where processes can be improved, and turning those observations into tools that are clearer, faster and more reliable. My work currently spans markets, Python development, data and AI-assisted automation.</p>
+    </div>
+  </section>
 
-<section id="skills">
-  <div class="section-head"><span>03</span><p>Capabilities</p></div>
-  <div class="split"><h2>What I work with</h2><div class="skill-list">
-    <article><span>01</span><div><small>PROGRAMMING</small><h3>Python · SQL</h3></div></article>
-    <article><span>02</span><div><small>RESEARCH & MARKETS</small><h3>Quantitative Research · Algorithmic Trading · Derivatives</h3></div></article>
-    <article><span>03</span><div><small>ENGINEERING</small><h3>APIs · Data Pipelines · Automation</h3></div></article>
-    <article><span>04</span><div><small>AI</small><h3>AI-assisted Workflows · Agentic Automation</h3></div></article>
-  </div></div>
-</section>
+  <section id="experience" class="section">
+    <div class="section-head"><span>02</span>EXPERIENCE</div>
+    <div class="split">
+      <h2>Work</h2>
+      <div class="timeline">
+        <article class="role"><div><strong>Equity Derivatives Trading</strong><small>Sell-side · Current</small></div><p>Trading operations across equity derivatives, with a focus on execution workflows, system reliability and process automation.</p></article>
+        <article class="role"><div><strong>More experience</strong><small>Details coming soon</small></div><p>Additional verified role and project details will be added here.</p></article>
+      </div>
+    </div>
+  </section>
 
-<section id="projects">
-  <div class="section-head"><span>04</span><p>Projects</p></div>
-  <div class="projects-wrap">
-    <div class="projects-title-row">
+  <section id="skills" class="section">
+    <div class="section-head"><span>03</span>CAPABILITIES</div>
+    <div class="split">
+      <h2>What I work with</h2>
+      <div class="cap-grid">
+        <article class="cap"><div class="cap-num">01 / PROGRAMMING</div><h3>Python · SQL</h3><p>Research, automation and data workflows.</p></article>
+        <article class="cap"><div class="cap-num">02 / MARKETS</div><h3>Quant Research · Derivatives</h3><p>Market data, behavior analysis and systematic research.</p></article>
+        <article class="cap"><div class="cap-num">03 / ENGINEERING</div><h3>APIs · Data Pipelines</h3><p>Connecting systems and building reliable workflows.</p></article>
+        <article class="cap"><div class="cap-num">04 / AI</div><h3>AI · Agentic Automation</h3><p>AI-assisted workflows for practical automation.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section id="projects" class="section">
+    <div class="section-head"><span>04</span>PROJECTS</div>
+    <div class="projects-intro">
       <h2>Selected work</h2>
-      <p>Research and engineering projects, presented simply with direct access to the project site or source code.</p>
+      <p>Research and engineering projects with direct access to the project presentation and source repository.</p>
     </div>
 
-    <article class="project-card">
+    <article class="project">
       <div class="project-visual" aria-hidden="true">
-        <div class="project-number">01</div>
-        <div class="project-graphic">
-          <div class="pg-ring ring-one"></div>
-          <div class="pg-ring ring-two"></div>
-          <div class="pg-line line-one"></div>
-          <div class="pg-line line-two"></div>
-          <div class="pg-point point-one"></div>
-          <div class="pg-point point-two"></div>
-          <div class="pg-label label-near">NEAR</div>
-          <div class="pg-label label-far">FAR</div>
+        <div class="pv-title">BTCUSDT / CALENDAR SPREAD</div>
+        <div class="spread-art">
+          <svg viewBox="0 0 520 360" preserveAspectRatio="none">
+            <defs>
+              <linearGradient id="areaGrad" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#7c8cff"/><stop offset="1" stop-color="#7c8cff" stop-opacity="0"/></linearGradient>
+            </defs>
+            <line class="axis" x1="0" y1="72" x2="520" y2="72"/><line class="axis" x1="0" y1="180" x2="520" y2="180"/><line class="axis" x1="0" y1="288" x2="520" y2="288"/>
+            <path class="spread-area" d="M0 240 C55 218 90 260 138 205 S236 120 292 170 S382 274 430 194 S485 110 520 132 L520 360 L0 360 Z"/>
+            <path class="spread-line-a" d="M0 240 C55 218 90 260 138 205 S236 120 292 170 S382 274 430 194 S485 110 520 132"/>
+            <path class="spread-line-b" d="M0 275 C63 249 104 286 160 246 S232 183 296 220 S395 314 452 240 S495 176 520 190"/>
+            <circle class="point-a" cx="292" cy="170" r="5"/><circle class="point-b" cx="296" cy="220" r="5"/>
+          </svg>
         </div>
       </div>
 
-      <div class="project-content">
+      <div class="project-body">
         <div class="project-meta">QUANTITATIVE RESEARCH · CRYPTO DERIVATIVES</div>
         <h3>BTCUSDT Quarterly Calendar Spread Research</h3>
-        <p>Historical research on near/far BTCUSDT quarterly futures spreads, including synchronized trade data, spread behavior and a provisional backtest.</p>
+        <p>Historical research on synchronized near/far BTCUSDT quarterly futures spreads, spread behavior and a provisional accumulation backtest. Results are research proxies, not claims of executable profitability.</p>
+        <div class="tags"><span>Python</span><span>Market Data</span><span>Derivatives</span><span>Backtesting</span></div>
 
-        <div class="tags">
-          <span>Python</span><span>Market Data</span><span>Derivatives</span><span>Backtesting</span>
-        </div>
-
-        <details class="project-menu">
-          <summary>Open project <span>⌄</span></summary>
-          <div class="project-menu-links">
-            <a href="https://ponlawatsanjan.github.io/crypto-calendar-spread-arbitrage/">
-              <strong>Project Website</strong><small>View the project presentation</small>
-            </a>
-            <a href="https://github.com/ponlawatsanjan/crypto-calendar-spread-arbitrage">
-              <strong>GitHub</strong><small>View source code and documentation</small>
-            </a>
+        <details>
+          <summary>Open project <span class="chev">⌄</span></summary>
+          <div class="project-links">
+            <a href="https://ponlawatsanjan.github.io/crypto-calendar-spread-arbitrage/"><span><strong>Project Website</strong><small>View the presentation</small></span><b>↗</b></a>
+            <a href="https://github.com/ponlawatsanjan/crypto-calendar-spread-arbitrage"><span><strong>GitHub</strong><small>Code & documentation</small></span><b>↗</b></a>
           </div>
         </details>
       </div>
     </article>
+  </section>
 
-    <div class="coming">More projects coming soon.</div>
-  </div>
-</section>
-
-<section id="contact">
-  <div class="section-head"><span>05</span><p>Contact</p></div>
-  <div class="contact-panel">
-    <div>
-      <div class="kicker">LET'S BUILD SOMETHING USEFUL</div>
-      <h2>Let’s connect.</h2>
+  <section id="contact" class="section">
+    <div class="section-head"><span>05</span>CONTACT</div>
+    <div class="contact">
+      <div><div class="eyebrow">LET'S CONNECT</div><h2 style="margin-top:22px">Build. Research.<br>Improve.</h2></div>
+      <div><p>Open to conversations around engineering, quantitative research, AI and automation.</p><div class="actions"><a class="btn primary" href="https://github.com/ponlawatsanjan">GitHub ↗</a></div></div>
     </div>
-    <div><p class="lead">Open to conversations around engineering, quantitative research, AI and automation.</p><div class="actions"><a class="primary" href="https://github.com/ponlawatsanjan">GitHub ↗</a></div></div>
-  </div>
-</section>
+  </section>
+
+  <footer><span>© <span id="year"></span> Ponlawat Sanjan</span><span>Portfolio</span></footer>
 </main>
 
-<footer><span>© <span id="year"></span> Ponlawat Sanjan</span><span>Portfolio</span></footer>
-<script src="js/app.js"></script>
+<script>
+  document.getElementById("year").textContent = new Date().getFullYear();
+</script>
 </body>
 </html>
