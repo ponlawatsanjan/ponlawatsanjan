@@ -11,7 +11,7 @@
 </head>
 <body>
 <header class="nav">
-  <a class="brand" href="#home">Ponlawat Sanjan</a>
+  <a class="brand" href="#home"><span class="brand-mark">P</span>Ponlawat Sanjan</a>
   <nav aria-label="Primary navigation">
     <a href="#about">About</a><a href="#experience">Experience</a><a href="#skills">Skills</a><a href="#projects">Projects</a><a href="#contact">Contact</a>
   </nav>
@@ -19,10 +19,29 @@
 
 <main>
 <section id="home" class="hero">
-  <div class="kicker">ENGINEERING · RESEARCH · AUTOMATION</div>
-  <h1>Building useful<br>systems from ideas.</h1>
-  <p>I work across software, quantitative research, financial markets and AI automation — turning complex problems into practical tools and structured workflows.</p>
-  <div class="actions"><a class="primary" href="#projects">Explore my work</a><a class="secondary" href="https://github.com/ponlawatsanjan">GitHub ↗</a></div>
+  <div class="hero-copy">
+    <div class="kicker">ENGINEERING · RESEARCH · AUTOMATION</div>
+    <h1>Building useful<br>systems from ideas.</h1>
+    <p>I work across software, quantitative research, financial markets and AI automation — turning complex problems into practical tools and structured workflows.</p>
+    <div class="actions"><a class="primary" href="#projects">Explore my work</a><a class="secondary" href="https://github.com/ponlawatsanjan">GitHub ↗</a></div>
+  </div>
+
+  <div class="hero-visual" aria-hidden="true">
+    <div class="visual-grid"></div>
+    <div class="orbit orbit-a"></div>
+    <div class="orbit orbit-b"></div>
+    <div class="visual-core">
+      <span>IDEA</span>
+      <strong>→</strong>
+      <span>SYSTEM</span>
+    </div>
+    <div class="visual-chip chip-a">DATA</div>
+    <div class="visual-chip chip-b">CODE</div>
+    <div class="visual-chip chip-c">AI</div>
+    <div class="visual-chip chip-d">RESEARCH</div>
+    <div class="visual-dot dot-a"></div>
+    <div class="visual-dot dot-b"></div>
+  </div>
 </section>
 
 <section id="about">
@@ -51,28 +70,47 @@
 <section id="projects">
   <div class="section-head"><span>04</span><p>Projects</p></div>
   <div class="projects-wrap">
-    <h2>Selected work</h2>
+    <div class="projects-title-row">
+      <h2>Selected work</h2>
+      <p>Research and engineering projects, presented simply with direct access to the project site or source code.</p>
+    </div>
 
     <article class="project-card">
-      <div class="project-meta">QUANTITATIVE RESEARCH · CRYPTO DERIVATIVES</div>
-      <h3>BTCUSDT Quarterly Calendar Spread Research</h3>
-      <p>Historical research on near/far BTCUSDT quarterly futures spreads, including synchronized trade data, spread behavior and a provisional backtest.</p>
-
-      <div class="tags">
-        <span>Python</span><span>Market Data</span><span>Derivatives</span><span>Backtesting</span>
+      <div class="project-visual" aria-hidden="true">
+        <div class="project-number">01</div>
+        <div class="project-graphic">
+          <div class="pg-ring ring-one"></div>
+          <div class="pg-ring ring-two"></div>
+          <div class="pg-line line-one"></div>
+          <div class="pg-line line-two"></div>
+          <div class="pg-point point-one"></div>
+          <div class="pg-point point-two"></div>
+          <div class="pg-label label-near">NEAR</div>
+          <div class="pg-label label-far">FAR</div>
+        </div>
       </div>
 
-      <details class="project-menu">
-        <summary>Open project <span>⌄</span></summary>
-        <div class="project-menu-links">
-          <a href="https://ponlawatsanjan.github.io/crypto-calendar-spread-arbitrage/">
-            <strong>Project Website</strong><small>View the project presentation</small>
-          </a>
-          <a href="https://github.com/ponlawatsanjan/crypto-calendar-spread-arbitrage">
-            <strong>GitHub</strong><small>View source code and documentation</small>
-          </a>
+      <div class="project-content">
+        <div class="project-meta">QUANTITATIVE RESEARCH · CRYPTO DERIVATIVES</div>
+        <h3>BTCUSDT Quarterly Calendar Spread Research</h3>
+        <p>Historical research on near/far BTCUSDT quarterly futures spreads, including synchronized trade data, spread behavior and a provisional backtest.</p>
+
+        <div class="tags">
+          <span>Python</span><span>Market Data</span><span>Derivatives</span><span>Backtesting</span>
         </div>
-      </details>
+
+        <details class="project-menu">
+          <summary>Open project <span>⌄</span></summary>
+          <div class="project-menu-links">
+            <a href="https://ponlawatsanjan.github.io/crypto-calendar-spread-arbitrage/">
+              <strong>Project Website</strong><small>View the project presentation</small>
+            </a>
+            <a href="https://github.com/ponlawatsanjan/crypto-calendar-spread-arbitrage">
+              <strong>GitHub</strong><small>View source code and documentation</small>
+            </a>
+          </div>
+        </details>
+      </div>
     </article>
 
     <div class="coming">More projects coming soon.</div>
@@ -81,7 +119,13 @@
 
 <section id="contact">
   <div class="section-head"><span>05</span><p>Contact</p></div>
-  <div class="split"><h2>Let’s connect.</h2><div><p class="lead">Open to conversations around engineering, quantitative research, AI and automation.</p><div class="actions"><a class="primary" href="https://github.com/ponlawatsanjan">GitHub ↗</a></div></div></div>
+  <div class="contact-panel">
+    <div>
+      <div class="kicker">LET'S BUILD SOMETHING USEFUL</div>
+      <h2>Let’s connect.</h2>
+    </div>
+    <div><p class="lead">Open to conversations around engineering, quantitative research, AI and automation.</p><div class="actions"><a class="primary" href="https://github.com/ponlawatsanjan">GitHub ↗</a></div></div>
+  </div>
 </section>
 </main>
 
